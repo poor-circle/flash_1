@@ -12,18 +12,20 @@
 			startPage = new StartPage();
 			hillPage = new HillPage();
 			pondPage = new PondPage();
-			
-			startPage.Hill.addEventListenner(MouseEvent.CLICK,onHillClick);
-			startPage.Pond.addEventListenner(MouseEvent.CLICK,onPondClick);
 			addChild (startPage);
+			startPage.hill.addEventListenner(MouseEvent.CLICK,onHillClick);
+			startPage.pond.addEventListenner(MouseEvent.CLICK,onPondClick);
+			
 		}
 		function onHillClick(event:MotionEvent) : void
 		{
+			stop();
 			addChild(HillPage);
 			removeChild(StartPage)
 		}
 		function onPondClick(event:MotionEvent) : void
 		{
+			stop();
 			addChild(PondPage);
 			removeChild(startPage);
 		}
